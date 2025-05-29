@@ -78,7 +78,7 @@ const Portfolio = ({ geistSans, geistMono }: PortfolioProps) => {
      {
       title: 'Página web bolivariano',
       description: 'Trabajo colaborativo en el desarrollo de la pagina web fronted de transportes y logistica Bolivariano, con un enfoque en la experiencia del usuario  para la compra de tiquetes ',
-      tech: ['Next ts',  'React', 'MySQL'],
+      tech: ['Next ts',  'React'],
       image: '/bolivariano.png',
       link: 'https://bolivariano-qa.plm.com.co/',
     },
