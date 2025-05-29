@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, ExternalLink, ChevronDown, Menu, X } from 'lucide-react';
 import Image from 'next/image';
+import { useRouter } from 'next/router'; 
 
 interface PortfolioProps {
   geistSans?: {
@@ -28,6 +29,7 @@ interface Project {
 }
 
 const Portfolio = ({ geistSans, geistMono }: PortfolioProps) => {
+  const router = useRouter(); 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   type SectionId = 'inicio' | 'sobre-mi' | 'habilidades' | 'proyectos' | 'contacto';
   const [activeSection, setActiveSection] = useState<SectionId>('inicio');
@@ -273,7 +275,7 @@ const Portfolio = ({ geistSans, geistMono }: PortfolioProps) => {
               <div key={index} className="bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-[1.02] group">
                 <div className="h-48 bg-gradient-to-br from-purple-600/20 to-pink-600/20 flex items-center justify-center relative overflow-hidden">
                   <Image
-                    src={project.image}
+                    src={`${router.basePath}${project.image}`} 
                     alt={project.title}
                     fill
                     className="object-cover"
